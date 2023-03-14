@@ -2,8 +2,9 @@ const  { createApp } = Vue;
 
 createApp ({
     data() {
-        return {
-            active: 0,
+        return {            
+            isActive: false,
+            activeIndex: 0,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -31,17 +32,21 @@ createApp ({
     }, 
     methods: {
         next(){
-            this.active++;
-            if (this.active > this.slides.length  - 1){
-                this.active = 0;
+            this.activeIndex++;
+            if (this.activeIndex > this.slides.length  - 1){
+                this.activeIndex = 0;
             }
         },
         prev(){
-            this.active--;
-            if (this.active < 0){
-                this.active = this.slides.length  - 1;
+            this.activeIndex--;
+            if (this.activeIndex < 0){
+                this.activeIndex = this.slides.length  - 1;
             }
         },
+        select(index){
+            this.activeIndex = index;
+            this.isActive = !this.isActive
+        }
     }
 }).mount('#app')
 

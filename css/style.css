@@ -50,7 +50,7 @@
     object-fit: cover;
 }
 
-.thumb.active {
+.active {
     border: 2px solid #ccc;
     opacity: 1;
 }
@@ -72,6 +72,9 @@
     bottom: 0;
 }
 
+[v-cloak] {
+    display:  none
+}
 /*
 EXTRA: in questo esempio gli accordion vengono creati
 usando 2 bordi di un quadratino ruotato di 45 gradi

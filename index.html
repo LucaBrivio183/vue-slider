@@ -27,7 +27,7 @@
                 <div class="thumbs">
                     <div class="prev" @click="prev"></div>
                     <div class="next" @click="next"></div>
-                    <div class="thumb" :class="{ active: slides[index].isActive }" v-for="(slide,index) in slides" @click="select(index,$event)">
+                    <div class="thumb" :class="{ active: index === activeIndex }" v-for="(slide,index) in slides" @click="select(index,$event)">
                         <img :src="slides[index].image" alt="Spiderman" />
                     </div>
                     

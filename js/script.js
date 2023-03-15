@@ -44,8 +44,19 @@ createApp ({
         },
         select(index){
             this.activeIndex = index;
+        },
+        autoplay() {
+            this.interval = setInterval(() => {
+                this.next()
+            }, 3000);
+        },
+        stopAutoplay() {
+            clearInterval(this.interval)
         }
-    }
+    },
+    mounted() {
+        this.autoplay()
+    },
 }).mount('#app')
 
 
